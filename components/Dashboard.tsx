@@ -1,8 +1,6 @@
 "use client"
-import { useSession } from 'next-auth/react'
-
-
-import React from 'react'
+import { useSession } from 'next-auth/react';
+import React from 'react';
 import { BackgroundBeamsWithCollision } from './ui/background-beams-with-collision';
 import HeroContent from './HeroContent';
 import DashboardContent from './DashboardContent';
@@ -11,19 +9,17 @@ const Dashboard = () => {
     const { data: session } = useSession();
     return (
         <>
-
             {session ? (
-                <>
-                    <BackgroundBeamsWithCollision children={<DashboardContent/>}/>
-                </>
+                <BackgroundBeamsWithCollision>
+                    <DashboardContent />
+                </BackgroundBeamsWithCollision>
             ) : (
-                <>
-                    <BackgroundBeamsWithCollision children={<HeroContent/>} />
-                </>
+                <BackgroundBeamsWithCollision>
+                    <HeroContent />
+                </BackgroundBeamsWithCollision>
             )}
-
         </>
-    )
+    );
 }
 
-export default Dashboard
+export default Dashboard;

@@ -3,6 +3,7 @@
 import React from 'react';
 import { signOut, useSession } from 'next-auth/react';
 import EmbedCodeGenerator from './EmbedCodeGenerator';
+import Image from 'next/image'; // Import the Image component
 
 const DashboardContent = () => {
     const { data: session } = useSession();
@@ -19,7 +20,7 @@ const DashboardContent = () => {
     return (
         <div className="flex flex-col">
             {/* User Info Section */}
-            <div className="flex justify-between items-center  px-4 py-4 text-white">
+            <div className="flex justify-between items-center px-4 py-4 text-white">
                 <div>
                     <h1 className="text-lg font-semibold">Logged in as {session.user?.name}</h1>
                     <button 
@@ -29,10 +30,12 @@ const DashboardContent = () => {
                         Sign Out
                     </button>
                 </div>
-                <img 
-                    className='rounded-full w-14 h-14' 
+                <Image 
+                    className='rounded-full' 
                     src={session.user?.image || 'fallback_image_url.jpg'} 
                     alt="User profile" 
+                    width={56} // Set the width
+                    height={56} // Set the height
                 />
             </div>
 

@@ -20,7 +20,7 @@ const DashboardContent = () => {
     return (
         <div className="flex flex-col">
             {/* User Info Section */}
-            <div className="flex justify-between items-center px-4 py-4 text-white">
+            <div className="flex justify-between items-center w-screen px-10 py-10 text-white">
                 <div>
                     <h1 className="text-lg font-semibold">Logged in as {session.user?.name}</h1>
                     <button 

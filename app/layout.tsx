@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import SessionWrapper from "@/components/SessionWrapper";
+import { Providers } from "./providers";
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,9 +16,11 @@ export default function RootLayout({
 }>) {
   return (
     <SessionWrapper>
-      <html lang="en">
-      <body>{children}</body>
-    </html>
+      <html lang="en" className='dark'>
+        <body> <Providers>
+          {children}
+        </Providers></body>
+      </html>
     </SessionWrapper>
   );
 }

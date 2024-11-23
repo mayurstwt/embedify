@@ -33,22 +33,25 @@ const EmbedCodeGenerator: React.FC = () => {
   };
 
   return (
-    <div className="max-w-3xl pt-32  pb-20 mx-auto p-6">
+    <div className="max-w-7xl mx-auto p-6">
       <h1 className="text-2xl font-bold mb-4 text-white">Code to Embed</h1>
       <textarea
-        placeholder="Write your HTML, CSS, or JS code here..."
+        placeholder="Write your code here..."
         value={code}
         onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
           setCode(e.target.value)
         }
         className="w-full h-48 p-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 mb-4 font-mono text-sm"
       ></textarea>
-      <button
-        onClick={handleGenerateEmbedCode}
-        className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
-      >
-        Generate Embed Code
-      </button>
+      <div className="flex justify-center">
+        <button
+          onClick={handleGenerateEmbedCode}
+          className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
+        >
+          Generate Embed Code
+        </button>
+      </div>
+
       {embedCode && (
         <div className="relative mt-6">
           <h2 className="text-xl font-semibold mb-2 text-white">Generated Embed Code</h2>
